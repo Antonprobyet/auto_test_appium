@@ -1,6 +1,6 @@
 from .page import Page
 from appium.webdriver.common.appiumby import AppiumBy
-from time import sleep
+
 
 class LoginPage(Page):
 
@@ -27,7 +27,7 @@ class LoginPage(Page):
     def login(self, username, password):
         self.enter_text(self.EMAIL_FIELD, username)
         self.enter_text(self.PASSWORD_FIELD, password)
-        self.click_element(self.LOGIN_BUTTON, timeout=4)
+        self.click_element(self.LOGIN_BUTTON)
 
 
     def find_menu_drawer(self):
@@ -36,4 +36,3 @@ class LoginPage(Page):
 
     def find_login_wrong(self):
         return self.find_element(self.LOGIN_WRONG)
-
